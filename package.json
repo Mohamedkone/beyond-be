@@ -33,7 +33,6 @@
     "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run rebuild",
     "start": "node -r source-map-support/register .",
-    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
     "rebuild": "npm run clean && npm run build"
   },
   "repository": {
@@ -49,6 +48,7 @@
     "!*/__tests__"
   ],
   "dependencies": {
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
     "@loopback/boot": "^5.0.10",
     "@loopback/core": "^4.0.10",
     "@loopback/repository": "^5.1.5",
