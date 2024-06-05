@@ -3,13 +3,13 @@ import {juggler} from '@loopback/repository';
 require('dotenv').config()
 
 const config = {
-  name: process.env.MYSQL_NAME,
-  connector: process.env.MYSQL_CONNECTOR,
-  host: process.env.MYSQL_HOST,
-  port: process.env.MYSQL_PORT,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE
+  name: 'beyond',
+  connector: 'mysql',
+  host: 'db-mysql-nyc3-14479-do-user-16856727-0.c.db.ondigitalocean.com',
+  port: 25060,
+  user: 'doadmin',
+  password: 'AVNS_urFIZAyXYSU_G50cVd5',
+  database: 'beyond'
 };
 
 // Observe application's life cycle to disconnect the datasource when
