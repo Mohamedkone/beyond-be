@@ -4,3 +4,4 @@ export * from './note.controller';
 export * from './trip.controller';
 export * from './econtroller.controller';
 export * from './country.controller';
+export * from './onboarding.controller';

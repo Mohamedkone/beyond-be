@@ -50,6 +50,11 @@ export class User extends Entity {
     required: true,
   })
   verified: boolean;
+  @property({
+    type: 'boolean',
+    required: true,
+  })
+  onboarded: boolean;
 
   @property({
     type: 'string',
