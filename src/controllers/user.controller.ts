@@ -84,6 +84,21 @@ export class UserController {
   return null
   }
 
+  @get('/user/email/{email}')
+  @response(200, {
+    description: 'Users model instance',
+    content: {
+      'application/json': {
+        schema: getModelSchemaRef(User, {includeRelations: true}),
+      },
+    },
+  })
+  async findEmail(
+    @param.path.string('email') email: string
+  ): Promise<User | null> {
+    return this.userRepository.findOne({where: {email}});
+  }
+
   @get('/login/{sub}')
   @response(200, {
     description: 'Array of User model instances',
