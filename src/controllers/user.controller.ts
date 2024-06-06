@@ -18,6 +18,7 @@ import {
 } from '@loopback/rest';
 import {User} from '../models';
 import {UserRepository} from '../repositories';
+import {v4 as uuidv4} from 'uuid';
 
 export class UserController {
   constructor(
@@ -43,6 +44,9 @@ export class UserController {
     })
     user: User,
   ): Promise<User> {
+    const date = new Date()
+    user.id = uuidv4()
+    user.joinedDate = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}`
     return this.userRepository.create(user);
   }
 
