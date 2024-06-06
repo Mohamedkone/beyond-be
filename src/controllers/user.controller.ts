@@ -84,6 +84,33 @@ export class UserController {
   return null
   }
 
+  @get('/login/{sub}')
+  @response(200, {
+    description: 'Array of User model instances',
+    content: {
+      'application/json': {
+        schema: {
+          type: 'array',
+          items: getModelSchemaRef(User, {includeRelations: true}),
+        },
+      },
+    },
+  })
+  async findLog(
+    @param.path.string('sub') sub:string,
+  ): Promise<Object | null> {
+    if(!sub) return null
+    const mySub = await this.userRepository.findOne({
+      where: {
+        sub: sub
+      }
+    })
+    if(mySub !== null){
+    return {main:await this.userRepository.findOne({where: {sub: sub}}),email: mySub.email}
+  }
+  return null
+  }
+
   @patch('/users')
   @response(200, {
     description: 'User PATCH success count',
