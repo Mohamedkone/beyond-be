@@ -46,7 +46,7 @@ export class UserController {
   ): Promise<User> {
     const date = new Date()
     user.id = uuidv4()
-    user.joinedDate = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}`
+    user.joinedDate = `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`
     return this.userRepository.create(user);
   }
 
