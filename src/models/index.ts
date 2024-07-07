@@ -5,3 +5,4 @@ export * from './econtacts.model';
 export * from './country.model';
 export * from './onboarding.model';
 export * from './userfav.model';
+export * from './checklist.model';

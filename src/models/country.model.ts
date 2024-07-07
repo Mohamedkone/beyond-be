@@ -36,6 +36,9 @@ export class Country extends Entity {
   @property({
     type: 'string',
     required: true,
+    mysql: {
+      dataType: 'TEXT'
+    }
   })
   description: string;
 
